@@ -1,10 +1,10 @@
-# Spotify Cassandra 2.0 Single Node Image
+# Spotify Cassandra 2.1 Single Node Image
 #
-# VERSION               0.1
+# VERSION               0.2
 #
-# Starts a Cassandra instance constituting a one node cluster. 
+# Starts a Cassandra instance constituting a one node cluster.
 
-FROM spotify/cassandra:base
+FROM vovimayhem/cassandra:base
 
 USER root
 
@@ -13,4 +13,3 @@ ADD scripts/cassandra-singlenode.sh /usr/local/bin/cassandra-singlenode
 
 # Start Cassandra
 ENTRYPOINT ["cassandra-singlenode"]
-

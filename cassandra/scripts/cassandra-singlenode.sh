@@ -2,12 +2,13 @@
 
 # Get running container's IP
 IP=`hostname --ip-address`
-if [ $# == 1 ]; then SEEDS="$1,$IP"; 
+if [ $# == 1 ]; then SEEDS="$1,$IP";
 else SEEDS="$IP"; fi
 
 
 # Dunno why zeroes here
 sed -i -e "s/^rpc_address.*/rpc_address: 0.0.0.0/" $CASSANDRA_CONFIG/cassandra.yaml
+sed -i -e "s/^# broadcast_rpc_address.*/broadcast_rpc_address: 1.2.3.4/" $CASSANDRA_CONFIG/cassandra.yaml
 
 # Be your own seed
 sed -i -e "s/- seeds: \"127.0.0.1\"/- seeds: \"$SEEDS\"/" $CASSANDRA_CONFIG/cassandra.yaml

@@ -1,12 +1,12 @@
-# Spotify Cassandra 2.0 Cluster Node Image
+# Spotify Cassandra 2.1 Cluster Node Image
 #
-# VERSION               0.1
+# VERSION               0.2
 #
 # Expects CASSANDRA_SEEDS and CASSANDRA_TOKEN env variables to be set.
 # If CASSANDRA_SEEDS is not set, node acts as its own seed
 # If CASSANDRA_TOKEN is not set, startup process is aborted
 
-FROM spotify/cassandra:base
+FROM vovimayhem/cassandra:base
 
 USER root
 
